@@ -93,3 +93,13 @@ and Debian (and their derivatives).
 Fork on
 [GitHub](https://github.com/andschwa/puppet-unattended_upgrades), make
 a Pull Request.
+
+## Run unattended_upgrades manually
+    # disable auto-update of unattended_upgrades
+    class { 'unattended_upgrades':
+      period => 0,
+      email  => $params::tech_mail,
+    }
+
+`$ sudo unattended-upgrade --debug --dry-run`
+
